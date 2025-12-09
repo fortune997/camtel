@@ -864,3 +864,457 @@ button {
         font-size: 15px;
     }
 }
+
+
+
+
+
+
+
+/* General section styling */
+.products-section {
+    padding: 60px 30px;
+    background: #f7f7f7;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+
+    /* ANIMATION */
+    opacity: 0;
+    animation: fade-down 0.8s ease forwards 0.2s;
+}
+
+/* Container for the two blocks */
+.products-container {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+    justify-content: center;
+
+    /* ANIMATION */
+    opacity: 0;
+    animation: fade-in 1s ease forwards 0.4s;
+}
+
+/* Product blocks */
+.product {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(20px); /* start lower */
+    opacity: 0;
+
+    /* ANIMATION */
+    animation: slide-up 0.9s ease forwards;
+}
+
+.product:nth-child(2) {
+    animation-delay: 0.5s; /* décalage entre les deux blocs */
+}
+
+/* LEFT – Blue gradient */
+.left-product {
+    background: linear-gradient(135deg, #67b4ff, #2a72d8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    /* HOVER */
+}
+.left-product:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* LEFT CONTENT */
+.left-product .content {
+    padding: 50px;
+    text-align: left;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+
+    /* ANIMATION */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+}
+
+.btn:hover::after {
+    left: 0; /* light sweep */
+}
+
+/* RIGHT – Blue Mobile */
+.right-product {
+    background: #09AEFF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    /* HOVER */
+}
+.right-product:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Logo area */
+.blue-mobile-logo {
+    position: relative;
+    text-align: center;
+
+    /* ANIMATION */
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Blue text */
+.blue-text {
+    font-size: 120px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* MOBILE TAG */
+.mobile-tag {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background: white;
+    color: #09AEFF;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 28px;
+    font-weight: 700;
+
+    /* ANIMATION */
+    animation: fade-in 1s ease forwards 1s;
+}
+
+/* ------------------------- */
+/* KEYFRAMES ANIMATIONS     */
+/* ------------------------- */
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fade-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ------------------------- */
+/* RESPONSIVE               */
+/* ------------------------- */
+@media (max-width: 992px) {
+    .blue-text {
+        font-size: 80px;
+    }
+    .mobile-tag {
+        top: -25px;
+        right: -20px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-container {
+        flex-direction: column;
+    }
+
+    .left-product .content {
+        padding: 40px 25px;
+    }
+
+    .blue-text {
+        font-size: 70px;
+    }
+}
+
+
+
+
+
+
+/* SECTION */
+.services-section {
+    text-align: center;
+    padding: 90px 30px;
+    background: #ffffff;
+    font-family: "Poppins", sans-serif;
+}
+
+/* TITLES */
+.services-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fade-down 0.7s ease forwards;
+}
+
+.services-subtitle {
+    color: #677189;
+    margin-bottom: 55px;
+    font-size: 18px;
+    opacity: 0;
+    animation: fade-in 1s ease forwards 0.3s;
+}
+
+/* CARDS CONTAINER */
+.services-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* INDIVIDUAL CARD */
+.service-card {
+    background: #f5f7fa;
+    padding: 40px 30px;
+    width: 320px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+
+    /* animation */
+    animation: slide-up 1s ease forwards;
+}
+
+/* Delay each card */
+.service-card:nth-child(1) { animation-delay: .4s; }
+.service-card:nth-child(2) { animation-delay: .6s; }
+.service-card:nth-child(3) { animation-delay: .8s; }
+
+/* Hover effects */
+.service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ICON STYLING */
+.icon {
+    font-size: 55px;
+    margin-bottom: 25px;
+    color: #09AEFF;
+    display: inline-block;
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* TEXT */
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #677189;
+}
+
+/* ------------------------- */
+/* KEYFRAME ANIMATIONS      */
+/* ------------------------- */
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fade-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ------------------------- */
+/* RESPONSIVE               */
+/* ------------------------- */
+
+@media (max-width: 900px) {
+    .services-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+/* CARD CONTAINER */
+.news-card {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    animation: slide-up 0.9s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.4s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* IMAGE AREA */
+.card-image {
+    position: relative;
+    overflow: hidden;
+  
+}
+
+.card-image img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+      height: 50%;
+}
+
+/* Zoom image on hover */
+.news-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* FEATURED BADGE */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: #3A8BFF;
+    color: #fff;
+    font-weight: 600;
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+/* CONTENT AREA */
+.card-content {
+    padding: 40px 35px;
+    height: 100%;
+}
+
+/* DATE */
+.date {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #677189;
+    margin-bottom: 15px;
+}
+
+/* ICON */
+.icon-date {
+    margin-right: 10px;
+}
+
+/* TITLE */
+.card-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+/* TEXT */
+.card-text {
+    color: #677189;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+/* READ MORE LINK */
+.read-more {
+    font-weight: 600;
+    color: #09AEFF;
+    font-size: 17px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* ANIMATIONS */
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .card-content {
+        padding: 30px 20px;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+}
+
+
+
+
+
+
