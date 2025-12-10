@@ -65,9 +65,12 @@ button {
     border: 1px solid rgba(128, 128, 128, 0.342);
     background-color: white;
     border-radius: 10px;
-
+    margin-top: 40px;
 }
 
+.btn{
+
+}
 .live{
         border: 1px solid #09AEFF ;
     border-radius: 10px;
@@ -128,6 +131,7 @@ button {
 
 .icon{
     display: none;
+    margin-top: 30px;
 }
 
 /* .chat-icon{
@@ -518,12 +522,14 @@ button {
 
 
 .services {
-    padding: 70px 40px;
+    /* padding: 70px 40px; */
     text-align: center;
+    width:100%;
+    margin: auto;
 }
 
 .services-title {
-    font-size: 42px;
+    font-size: 10px;
     color: #09AEFF;
     font-weight: 700;
 }
@@ -540,7 +546,7 @@ button {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    gap: 20px;
 }
 
 
@@ -548,9 +554,10 @@ button {
 .service-card {
     background: white;
     border-radius: 18px;
-    overflow: hidden;
+    overflow-y: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s;
+    width: 50px;
 }
 
 .service-card:hover {
@@ -611,9 +618,6 @@ button {
     font-weight: 600;
 }
 
-/* -------------------- FIXED BUTTONS -------------------- */
-
-/* Middle button (scroll to top) */
 .btn-top {
     position: fixed;
     bottom: 105px;
@@ -680,7 +684,8 @@ button {
 /* Section principale */
 .infrastructure-section {
     max-width: 1200px;
-    width: 100%;
+    width: 95%;
+    margin: auto;
     padding: 40px 0;
 }
 
@@ -1198,7 +1203,7 @@ button {
 
 /* CARD CONTAINER */
 .news-card {
-    max-width: 1100px;
+    width: 98%;
     margin: 40px auto;
     background: #ffffff;
     border-radius: 18px;
@@ -1318,3 +1323,233 @@ button {
 
 
 
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1300px;
+  width: 97%;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #1a1f3d;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Content */
+.content {
+  padding: 22px;
+}
+
+.date {
+  font-size: 14px;
+  color: #6b7078;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 14px;
+  color: #111;
+  font-weight: 700;
+}
+
+.content p {
+  color: #555;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.read {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: #09AEFF;
+}
+
+.read:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/* Title */
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+/* Layout */
+.location-container {
+  max-width: 1300px;
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Text section */
+.location-text h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.location-text p {
+  line-height: 1.6;
+  margin-bottom: 28px;
+  color: #555;
+}
+
+/* Info items */
+.info {
+  display: grid;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.item {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: #318bf7;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #2078e0;
+}
+
+/* Map box */
+.map-box {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map-box {
+    height: 320px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.partners-section {
+  max-width: 1400px;
+   width: 95%;
+  margin: auto;
+  text-align: center;
+  min-height: 90vh;
+}
+
+/* TITLES */
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #5a5f66;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+   
+}
+
+/* LOGO CARDS */
+.partner-card {
+  background: white;
+  width: 100%;
+  max-width: 260px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+}
+
+/* LOGO IMAGES */
+.partner-card img {
+  max-width: 90%;
+  max-height: 80px;
+  object-fit: contain;
+}
